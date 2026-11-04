@@ -1,245 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Muhammad Ismail Butt | AI Student</title>
-<meta name="description" content="Portfolio of Muhammad Ismail Butt, BS Artificial Intelligence student at UET Lahore and aspiring AI engineer.">
-<meta property="og:title" content="Muhammad Ismail Butt | AI Student">
-<meta property="og:description" content="BS Artificial Intelligence student at UET Lahore and aspiring AI engineer. Projects, skills and contact details.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mismailbutt.github.io/">
-<meta property="og:image" content="profile.jpg">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0C1424;--bg2:#101B30;--surface:#14213A;--ink:#E8EDF6;--muted:#9AA8BE;--line:#243453;--accent:#E0B25A;--accent-ink:#1A1405;--soft:rgba(224,178,90,.12);
-  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Public Sans","Segoe UI",system-ui,sans-serif;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark;
-}
-@media (prefers-color-scheme:light){
-  :root:not([data-theme="dark"]){--bg:#F4F6FA;--bg2:#EAEFF6;--surface:#FFFFFF;--ink:#0F1B33;--muted:#53627A;--line:#D5DDEA;--accent:#8A5A00;--accent-ink:#FFFFFF;--soft:rgba(138,90,0,.1);color-scheme:light}
-}
-:root[data-theme="light"]{--bg:#F4F6FA;--bg2:#EAEFF6;--surface:#FFFFFF;--ink:#0F1B33;--muted:#53627A;--line:#D5DDEA;--accent:#8A5A00;--accent-ink:#FFFFFF;--soft:rgba(138,90,0,.1);color-scheme:light}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.7 var(--body);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100%;position:relative}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
-h1,h2,h3,h4,p{margin:0}
-a{color:var(--accent)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
-
-/* slow drifting light behind the page */
-.glow{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.glow i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.5;background:radial-gradient(circle,var(--soft),transparent 65%)}
-.glow i:nth-child(1){top:-25vmax;right:-15vmax;animation:drift 22s ease-in-out infinite alternate}
-.glow i:nth-child(2){bottom:-30vmax;left:-20vmax;animation:drift 28s ease-in-out infinite alternate-reverse}
-@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
-
-/* header + tabs */
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
-.bar .in{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
-.brand{font:700 1.1rem var(--head);color:var(--ink);text-decoration:none;white-space:nowrap}
-.tabs{position:relative;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{appearance:none;background:none;border:0;font:500 .95rem var(--body);color:var(--muted);padding:21px 14px;cursor:pointer;white-space:nowrap;transition:color .2s}
-.tab:hover{color:var(--ink)}
-.tab.active{color:var(--accent);font-weight:600}
-.ink{position:absolute;bottom:0;left:0;height:3px;width:0;background:var(--accent);border-radius:3px 3px 0 0;transition:transform .4s cubic-bezier(.4,0,.2,1),width .4s cubic-bezier(.4,0,.2,1)}
-
-/* sections */
-main{flex:1;width:100%;max-width:1000px;margin:0 auto;padding:40px 24px 72px}
-section{padding:60px 0;border-bottom:1px solid var(--line)}
-section:last-of-type{border-bottom:none}
-h2{font:700 clamp(1.7rem,4vw,2.2rem)/1.15 var(--head);letter-spacing:-.01em;margin-bottom:24px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px;transition:border-color .25s,transform .25s}
-.card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.card h3{font:600 1.15rem var(--head);margin-bottom:12px}
-.sub{color:var(--muted)}
-.stack{display:grid;gap:20px}
-
-/* home */
-.home{min-height:calc(100vh - 200px);display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
-.home-text{max-width:620px}
-.photo{position:relative;width:min(340px,34vw);aspect-ratio:1;flex:none}
-.photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--accent);border-radius:22px;opacity:.7}
-.photo img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:22px;display:block;border:1px solid var(--line)}
-.home h1{font:700 clamp(2.4rem,7vw,4.4rem)/1.05 var(--head);letter-spacing:-.03em}
-.role{display:flex;align-items:center;gap:12px;margin-top:20px;font:500 1.3rem var(--head);color:var(--accent)}
-.meta{margin-top:20px;color:var(--muted);display:grid;gap:2px}
-
-/* about */
-.prose p{max-width:68ch;margin-bottom:16px}
-.objective{margin-top:12px;max-width:68ch;padding:22px 26px;background:var(--soft);border-left:4px solid var(--accent);border-radius:0 12px 12px 0}
-.objective h3{font:600 1.05rem var(--head);margin-bottom:8px}
-
-/* education */
-.edu-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.edu-top h3{margin:0;font-size:1.25rem}
-.years{font:600 1.1rem var(--head);color:var(--accent)}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0 0;padding-top:20px;border-top:1px solid var(--line)}
-.facts dt{font-size:.88rem;color:var(--muted)}
-.facts dd{margin:2px 0 0;font-weight:600}
-
-/* skills */
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
-.chips li{background:var(--soft);padding:6px 14px;border-radius:999px;font-size:.93rem;font-weight:500}
-
-/* projects */
-.status{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;font-size:.85rem;font-weight:600;color:var(--accent);background:var(--soft);border-radius:6px;padding:2px 10px}
-
-/* contact */
-.links{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.links a{display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
-.links a:hover{border-color:var(--accent);transform:translateY(-3px)}
-
-footer{border-top:1px solid var(--line);padding:18px 24px;text-align:center;color:var(--muted);font-size:.88rem}
-
-@media (max-width:760px){
-  .bar .in{flex-direction:column;align-items:flex-start;gap:0;padding-top:12px}
-  .tabs{width:100%;margin:0 -14px}
-  .tab{padding:12px 14px}
-  main{padding:40px 20px 56px}
-  .home{min-height:auto;padding-top:24px;grid-template-columns:1fr;gap:40px}
-  .photo{width:220px;order:-1;margin-right:14px}
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Muhammad Ismail Butt | AI Student</title>
+    <meta name="description" content="Portfolio of Muhammad Ismail Butt, BS Artificial Intelligence student at UET Lahore and aspiring AI engineer.">
+    
+    <!-- Open Graph Metadata (Fixed Links) -->
+    <meta property="og:title" content="Muhammad Ismail Butt | AI Student">
+    <meta property="og:description" content="BS Artificial Intelligence student at UET Lahore and aspiring AI engineer. Projects, skills and contact details.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:image" content="https://github.ioassets/profile.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0C1424; --bg2: #101B30; --surface: #14213A; --ink: #E8EDF6; --muted: #9AA8BE; --line: #243453; --accent: #E0B25A; --accent-ink: #1A1405; --soft: rgba(224, 178, 90, .12);
+            --head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif; --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+            box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); color-scheme: dark;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.7 var(--body); -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; position: relative; }
+        h1, h2, h3, p { margin: 0; }
+        a { color: var(--accent); }
+        
+        .glow { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+        .glow i { position: absolute; width: 60vmax; height: 60vmax; border-radius: 50%; filter: blur(90px); opacity: .5; background: radial-gradient(circle, var(--soft), transparent 65%); }
+        .glow i:nth-child(1) { top: -25vmax; right: -15vmax; animation: drift 22s ease-in-out infinite alternate; }
+        .glow i:nth-child(2) { bottom: -30vmax; left: -20vmax; animation: drift 28s ease-in-out infinite alternate-reverse; }
+        @keyframes drift { to { transform: translate(8vmax, 6vmax) scale(1.15); } }
+        
+        .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+        .bar .in { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+        .brand { font: 700 1.1rem var(--head); color: var(--ink); text-decoration: none; }
+        .tabs { display: flex; gap: 16px; }
+        .tabs a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; padding: 8px 12px; transition: color .2s; }
+        .tabs a:hover { color: var(--ink); }
+        
+        main { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 40px 24px 72px; }
+        section { padding: 60px 0; border-bottom: 1px solid var(--line); }
+        section:last-of-type { border-bottom: none; }
+        h2 { font: 700 clamp(1.7rem, 4vw, 2.2rem)/1.15 var(--head); letter-spacing: -.01em; margin-bottom: 24px; }
+        
+        .home { min-height: calc(100vh - 200px); display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center; }
+        .home-text { max-width: 620px; }
+        .home h1 { font: 700 clamp(2.4rem, 7vw, 4.4rem)/1.05 var(--head); letter-spacing: -.03em; }
+        .role { font: 500 1.3rem var(--head); color: var(--accent); margin-top: 12px; }
+        .meta { margin-top: 20px; color: var(--muted); display: grid; gap: 6px; }
+        
+        .photo { position: relative; width: min(300px, 30vw); aspect-ratio: 1; }
+        .photo::before { content: ""; position: absolute; inset: 12px -12px -12px 12px; border: 2px solid var(--accent); border-radius: 22px; opacity: .7; }
+        .photo img { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 22px; display: block; border: 1px solid var(--line); }
+        
+        .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px; }
+        .objective { padding: 22px 26px; background: var(--soft); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; margin-top: 16px; }
+        .edu-top { display: flex; justify-content: space-between; font-family: var(--head); font-size: 1.2rem; font-weight: 600; }
+        .years { color: var(--accent); }
+        
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
+        .chips li { background: var(--soft); padding: 6px 14px; border-radius: 999px; font-size: .93rem; font-weight: 500; }
+        .status { display: inline-block; font-size: 0.8rem; font-weight: 600; color: var(--accent); background: var(--soft); padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+        
+        footer { border-top: 1px solid var(--line); padding: 24px; text-align: center; color: var(--muted); font-size: .88rem; }
+        
+        @media (max-width: 760px) {
+            .bar .in { flex-direction: column; align-items: flex-start; gap: 12px; padding: 12px 24px; }
+            .home { grid-template-columns: 1fr; gap: 32px; }
+            .photo { width: 200px; order: -1; }
+        }
+    </style>
 </head>
 <body>
-<div class="glow" aria-hidden="true"><i></i><i></i></div>
+    <div class="glow" aria-hidden="true"><i></i><i></i></div>
 
-<header class="bar">
-  <div class="in">
-    <a class="brand" href="#home">Ismail Butt</a>
-    <nav aria-label="Sections">
-      <div class="tabs" id="tabs">
-        <button class="tab active" onclick="scrollToSection('home')">Home</button>
-        <button class="tab" onclick="scrollToSection('about')">About</button>
-        <button class="tab" onclick="scrollToSection('education')">Education</button>
-        <button class="tab" onclick="scrollToSection('skills')">Skills</button>
-        <button class="tab" onclick="scrollToSection('projects')">Projects</button>
-        <button class="tab" onclick="scrollToSection('contact')">Contact</button>
-      </div>
-    </nav>
-  </div>
-</header>
+    <header class="bar">
+        <div class="in">
+            <a class="brand" href="#home">Ismail Butt</a>
+            <nav class="tabs">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-  <!-- Home Section -->
-  <section id="home">
-    <div class="home">
-      <div class="home-text">
-        <h1>Muhammad Ismail Butt</h1>
-        <p class="role">AI Student | Aspiring AI Engineer</p>
-        <div class="meta"><span>BS Artificial Intelligence, UET Lahore</span><span>Lahore, Pakistan</span></div>
-      </div>
-      <div class="photo"><img src="profile.jpg" alt="Portrait of Muhammad Ismail Butt"></div>
-    </div>
-  </section>
+    <main>
+        <section id="home" class="home">
+            <div class="home-text">
+                <h1>Muhammad Ismail Butt</h1>
+                <div class="role">AI Student | Aspiring AI Engineer</div>
+                <div class="meta">
+                    <div>BS Artificial Intelligence, UET Lahore</div>
+                    <div>Lahore, Pakistan</div>
+                </div>
+            </div>
+            <div class="photo">
+                <!-- Fixed Image Source (Relative path without leading slash) -->
+                <img src="assets/profile.png" alt="Portrait of Muhammad Ismail Butt">
+            </div>
+        </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card prose">
-      <p>Main UET Lahore se Artificial Intelligence mein BS kar raha hoon. Mera focus data engineering, machine learning pipelines aur modern web applications banane par hai.</p>
-      <div class="objective">
-        <h3>Career Objective</h3>
-        <p>Ek expert AI Engineer ban kar aise scalable systems aur solutions develop karna jo real-world problems ko solve kar sakein.</p>
-      </div>
-    </div>
-  </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>I am currently pursuing a Bachelor of Science in Artificial Intelligence at UET Lahore. My primary engineering focus revolves around creating production-ready machine learning pipelines, optimizing core data structures, data engineering systems, and developing fast, modern responsive web applications.</p>
+                <div class="objective">
+                    <h3>Career Objective</h3>
+                    <p>To design, develop, and scale artificial intelligence systems that address core engineering bottlenecks and build meaningful real-world software utilities.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- Education Section -->
-  <section id="education">
-    <h2>Education</h2>
-    <div class="card">
-      <div class="edu-top">
-        <h3>University of Engineering and Technology (UET), Lahore</h3>
-        <span class="years">2024 - 2028</span>
-      </div>
-      <p class="sub">Bachelor of Science in Artificial Intelligence</p>
-      <dl class="facts">
-        <div><dt>Current Status</dt><dd>BS AI Student</dd></div>
-        <div><dt>Focus Areas</dt><dd>Python, Data Structures, Algorithms, ETL Pipelines</dd></div>
-      </dl>
-    </div>
-  </section>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+                <div class="edu-top">
+                    <span>University of Engineering and Technology (UET), Lahore</span>
+                    <span class="years">2024 - 2028</span>
+                </div>
+                <p style="color: var(--muted); margin: 4px 0 12px;">Bachelor of Science in Artificial Intelligence</p>
+                <p><strong>Core Focus Areas:</strong> Python, Data Structures, Algorithms, ETL Systems, and Database Management.</p>
+            </div>
+        </section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills & Tech Stack</h2>
-    <div class="cols">
-      <div class="card">
-        <h3>Programming & Core</h3>
-        <ul class="chips"><li>Python</li><li>Pydantic</li><li>Pandas</li><li>NumPy</li><li>SQL</li></ul>
-      </div>
-      <div class="card">
-        <h3>Tools & Frameworks</h3>
-        <ul class="chips"><li>Streamlit</li><li>SQLite</li><li>Git & GitHub</li><li>VS Code</li></ul>
-      </div>
-    </div>
-  </section>
+        <section id="skills">
+            <h2>Skills &amp; Tech Stack</h2>
+            <div class="card">
+                <h3 style="margin-bottom: 12px;">Languages &amp; Frameworks</h3>
+                <ul class="chips">
+                    <li>Python</li>
+                    <li>Pydantic</li>
+                    <li>Pandas</li>
+                    <li>NumPy</li>
+                    <li>SQL</li>
+                    <li>Streamlit</li>
+                    <li>SQLite</li>
+                    <li>Git &amp; GitHub</li>
+                </ul>
+            </div>
+        </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="stack">
-      <div class="card">
-        <span class="status">Active Project</span>
-        <h3>Pakistan Weather and Air Quality: ETL + EDA Pipeline</h3>
-        <p class="sub">Open-Meteo API se historical data extract karke Lahore, Karachi, Islamabad, Peshawar aur Quetta ka analysis karna.</p>
-      </div>
-    </div>
-  </section>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="card">
+                <span class="status">Active Development</span>
+                <h3>Pakistan Weather and Air Quality: ETL + EDA Pipeline</h3>
+                <p>A comprehensive data pipeline that dynamically extracts historical and real-time environmental metrics from the Open-Meteo API. The project cleans, transforms, and analyzes meteorological data for major urban hubs including Lahore, Karachi, Islamabad, Peshawar, and Quetta.</p>
+            </div>
+        </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <div class="card">
-      <p>Aap mujhse rabta kar sakte hain:</p>
-      <ul class="links">
-        <li><a href="https://github.com/mismailbutt" target="_blank"><strong>GitHub</strong><small>github.com/mismailbutt</small></a></li>
-      </ul>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2026 Muhammad Ismail Butt. All rights reserved.</p>
-</footer>
-
-<script>
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-}
-
-// Scroll par automatic active tab highlight karne ke liye
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
-  const tabs = document.querySelectorAll('.tab');
-  
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= (sectionTop - 150)) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  tabs.forEach(tab => {
-    tab.classList.remove('active');
-    if (tab.getAttribute('onclick').includes(current)) {
-      tab.classList.add('active');
-    }
-  });
-});
-</script>
-
-</body>
-</html>
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="card" style="text-align: center;">
